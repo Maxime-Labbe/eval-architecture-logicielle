@@ -1,0 +1,30 @@
+syntax = "proto3"; 
+
+package ranking;
+
+service RankingService {
+    rpc CalculateRanking(RankingRequest) returns (RankingResponse);  
+}
+
+message RankingRequest {
+    repeated Team teams = 1;
+}
+
+message Team {
+    int32 id = 1;
+    string name = 2;
+}
+
+message RankingResponse {
+    bool success = 1;
+    repeated Rank ranks = 2;
+}
+
+message Rank {
+    int32 teamId = 1;
+    int32 played = 2;
+    int32 wins = 3;
+    int32 draws = 4;
+    int32 losses = 5;
+    int32 points = 6;
+}
