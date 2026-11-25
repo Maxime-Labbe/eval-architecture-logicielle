@@ -7,11 +7,11 @@ const PROTO_PATH = path.join(__dirname, '../Proto/team.proto');
 const packageDefinition = protoLoader.loadSync(PROTO_PATH);
 const teamProto = grpc.loadPackageDefinition(packageDefinition).team;
 
-function startGrpcServer(sendTeamUseCase) {
+function startGrpcServer(getTeam) {
     const server = new grpc.Server();
     server.addService(teamProto.TeamService.service, {
-        sendTeam(call, callback) {
-            const Team = GetTeam(call.request);
+        getTeam(call, callback) {
+            const Team = getTeam(call.request);
             if (Team) {
                 callback(null, {
                     success: true,

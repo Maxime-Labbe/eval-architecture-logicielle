@@ -1,0 +1,13 @@
+syntax = "proto3"; 
+
+package teams;
+
+service TeamsService {
+    rpc GetTeams() returns (TeamResponse);  
+}
+
+
+message TeamResponse {
+    int32 id = 1;
+    string name = 2
+}
