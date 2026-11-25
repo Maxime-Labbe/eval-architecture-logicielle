@@ -4,6 +4,10 @@
 
 Réalisé par Maxime Labbe et Rayane Meyfroot.
 
+## Erreurs
+
+Le service teams n'est pas fonctionnel et le service matches n'a pas été fait mais il garderait tous la même logique !
+
 ## Contraintes 
 
 Nous avons sélectionné les contraintes A et C.
